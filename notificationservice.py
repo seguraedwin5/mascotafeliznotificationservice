@@ -17,13 +17,11 @@ def inicio():
 
 
 #implementacion gets
-@app.get("/mailpassword")
-def sendmailpassword(receivermail):
+@app.get("/mail")
+def sendmailpassword(receivermail, subject="mail por defecto", content="Contenido por defecto"):
     destino = receivermail
-    asunto = "Reestablecimiento password Mascota Feliz"
-    mensaje = """
-    <h1>Este es un correo de Reestablecimiento de contraseña</h1>
-    """
+    asunto = subject
+    mensaje = content
    
     message = Mail(
     from_email='seguraedwin5@gmail.com',
